@@ -2,9 +2,9 @@
 
 class User::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation/new
-  def new
-    super
-  end
+  # def new
+  #   super
+  # end
 
   # POST /resource/confirmation
   # def create
