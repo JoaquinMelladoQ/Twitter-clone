@@ -1,36 +1,37 @@
 <div class="container">
   <div class="row justify-content-md-center">
-    <div class="col-md-auto">
-      <p id="notice"><%= notice %></p>
-    </div>
-    <div class="col-md-auto">
-      <h1>Tweets</h1>
-    </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Content</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-      <div class="col-md-auto">
-        <tbody>
-          <% @tweets.each do |tweet| %>
-            <tr>
-              <td><%= tweet.content %></td>
-              <td><%= link_to 'Show', tweet %></td>
-              <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-              <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
+      <div class="index--header">
+        <h1>Tweets</h1>
       </div>
-    </table>
-
-    <br>
-
-    <%= link_to 'New Tweet', new_tweet_path %>
+      <% if user_signed_in? %>
+      <div class="index--form">
+        <%= image_tag "#{current_user.image_url}", class: "tweet--user-image" %>
+        <%= render "form" %>
+      </div>
+      <% end %>
+      <div class="index--content">
+        <% @tweets.each do |tweet| %>
+        <div class="tweet">
+          <div class="tweet--header">
+            <%= image_tag "#{tweet.user.image_url}", class: "tweet--user-image" %>
+            <span class="tweet--username"><%= tweet.user.name %></span> •
+            <%= link_to distance_of_time_in_words(Time.now, tweet.created_at), tweet_path(tweet.id), class: "tweet--date" %>
+          </div>
+          <div class="tweet--content">
+            <p class="tweet--content-text">
+              <%= tweet.content %>
+            </p>
+            <% if user_signed_in? %>
+            <hr>
+            <div>
+              <%= link_to "#{tweet.total_likes} Me Gusta", likes_path(tweet.id), method: :post, class: "tweet--date" %> •
+            </div>
+            <hr>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+      </div>
   </div>
     <%= paginate @tweets %>
 </div>

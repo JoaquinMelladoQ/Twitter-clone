@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_15_121914) do
+ActiveRecord::Schema.define(version: 2020_11_16_145810) do
+
+  create_table "likes", force: :cascade do |t|
+    t.boolean "active", default: true
+    t.integer "user_id"
+    t.integer "tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_likes_on_tweet_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.integer "total_likes", default: 0
     t.index ["user_id"], name: "index_tweets_on_user_id"
   end
 
