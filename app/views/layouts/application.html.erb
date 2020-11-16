@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+        <li class="nav-link text-center pt-0 pb-0 w-100">
+          
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">Hola <%= current_user.name %></a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to 'Perfil', edit_user_registration_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to "Iniciar Sesión", new_user_session_path, class:'btn btn-outline-primary' %>
+          <%= link_to "Regístrate", new_user_registration_path, class: 'btn btn-outline-primary' %>
+        </li>
+    <% end %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     <%= yield %>
