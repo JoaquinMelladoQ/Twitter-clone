@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :tweets
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'tweets#index'
+  post 'likes/:tweet_id', to: 'likes#create', as: 'likes'
 end
