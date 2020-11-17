@@ -1,4 +1,11 @@
 // Place all the styles related to the tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import "bootstrap" 
+
+@import "bootstrap"; 
+
+.tweet--user-image,{
+    height: 40px;
+    border-radius: 50%;
+}
+
