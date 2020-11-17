@@ -1,14 +1,14 @@
 <div class="container">
   <div class="row justify-content-md-center">
-      <div class="index--header">
-        <h1>Tweets</h1>
-      </div>
       <% if user_signed_in? %>
       <div class="index--form">
         <%= image_tag "#{current_user.image_url}", class: "tweet--user-image" %>
         <%= render "form" %>
       </div>
       <% end %>
+      <div class="container">
+        <h1>Tweets</h1>
+      </div>
       <div class="index--content">
         <% @tweets.each do |tweet| %>
         <div class="tweet">
