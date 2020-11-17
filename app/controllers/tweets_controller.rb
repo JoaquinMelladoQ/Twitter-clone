@@ -43,6 +43,10 @@ class TweetsController < ApplicationController
     end
   end
 
+  def retweet
+    
+  end
+
   def destroy
     @tweet.destroy
     respond_to do |format|
