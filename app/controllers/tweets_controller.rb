@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     @tweet = Tweet.new
-    @tweets = Tweet.page
+    @tweets = Tweet.page params[:page]
   end
 
   # GET /tweets/1
