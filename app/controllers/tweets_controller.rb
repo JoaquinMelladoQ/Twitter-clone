@@ -14,7 +14,7 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    @tweet = Tweet.find(params[:id]) 
+ 
   end
 
   def create
@@ -51,9 +51,9 @@ class TweetsController < ApplicationController
 
       if rt.save
         @tweet.update(tweet_params)
-        redirect_to root_path, notice: 'aoeuao'
+        redirect_to root_path, notice: 'retweeted'
       else 
-        redirect_to root_path, notice: 'aoeuaoeu'
+        redirect_to root_path, notice: 'something went wrong'
       end
   end
 
