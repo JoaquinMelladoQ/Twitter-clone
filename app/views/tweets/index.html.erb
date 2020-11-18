@@ -21,10 +21,13 @@
             <p class="tweet--content-text">
               <%= tweet.content %>
             </p>
+            <div>
+            <%= link_to 'Retweet', retweet_path(tweet.id), data: {confirm: 'Are you sure?', method: :post} %>
+            </div>
             <% if user_signed_in? %>
             <hr>
             <div>
-              <%= link_to "#{tweet.total_likes} Me Gusta", likes_path(tweet.id), method: :post, class: "tweet--date" %> •
+              <%= link_to "#{tweet.total_likes} Like", likes_path(tweet.id), method: :post, class: "tweet--date" %> •
             </div>
             <hr>
             <% end %>
