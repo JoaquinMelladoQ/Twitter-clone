@@ -22,9 +22,8 @@
               <%= tweet.content %>
             </p>
             <hr>
-            <div>
+            <div>      
             <%= link_to 'Retweet', retweet_path(tweet.id), data: {confirm: 'Quieres retweetear?', method: :post} %>
-            <%= tweet.content %>
             </div>
             <% if user_signed_in? %>
             <hr>
