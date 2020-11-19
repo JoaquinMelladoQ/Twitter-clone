@@ -14,7 +14,6 @@ class TweetsController < ApplicationController
   end
 
   def edit
- 
   end
 
   def create
@@ -45,16 +44,7 @@ class TweetsController < ApplicationController
   end
 
   def retweet
-    @tweet = Tweet.find(params[:id]) if params[:id]
-    rt = Tweet.new(params[:content])
-    rt.user = current_user
-
-      if rt.save
-        @tweet.update(tweet_params)
-        redirect_to root_path, notice: 'retweeted'
-      else 
-        redirect_to root_path, notice: 'something went wrong'
-      end
+    @tweet = Tweet.find(params[:id])
   end
 
   def destroy
