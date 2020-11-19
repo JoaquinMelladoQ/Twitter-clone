@@ -23,7 +23,7 @@
             </p>
             <hr>
             <div>      
-            <%= link_to 'Retweet', retweet_path(tweet.id), data: {confirm: 'Quieres retweetear?', method: :post} %>
+            <%= link_to 'Retweet', tweet_tweets_path(tweet.id), data: {confirm: 'Quieres retweetear?', method: :post} %>
             </div>
             <% if user_signed_in? %>
             <hr>

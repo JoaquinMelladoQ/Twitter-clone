@@ -1,5 +1,5 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :set_tweet, only: [:new, :show, :edit, :update, :destroy]
 
   def index
     @tweet = Tweet.new
@@ -11,15 +11,17 @@ class TweetsController < ApplicationController
 
   def new
     @tweet = Tweet.new
+    @tweet_id = params[:tweet_id]
+    @retweet = Tweet.find(params[:tweet_id])
   end
-
+  
   def edit
   end
-
+  
   def create
     @tweet = Tweet.new(tweet_params)
     @tweet.user = current_user
-
+    
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to root_path, notice: 'Tweet was successfully created.' }
@@ -43,9 +45,13 @@ class TweetsController < ApplicationController
     end
   end
 
-  def retweet
-    @tweet = Tweet.find(params[:id])
-  end
+  # def retweet
+  #   @tweet = Tweet.find(params[:id])
+  #   if @tweet
+  #     @tweet_retweet = current_user
+  #   else
+  #   end
+  # end
 
   def destroy
     @tweet.destroy
@@ -62,6 +68,6 @@ class TweetsController < ApplicationController
     end
 
     def tweet_params
-      params.require(:tweet).permit(:content)
+      params.require(:tweet).permit(:content, :user_id, :tweet_id)
     end
 end
