@@ -1,10 +1,10 @@
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-md-auto">
-            <h1>New Tweet</h1>
+            <h1>Retweet</h1>
         </div>
         <div class="col-md-auto">
-            <%= render 'form', tweet: @tweet %>
+            <%= render 'anotherform', tweet: @tweet, tweet_id: @tweet_retweet_id %>
         </div>
         <div class="col-md-auto">
             <%= link_to 'Back', tweets_path %>
