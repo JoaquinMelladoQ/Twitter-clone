@@ -1,0 +1,10 @@
+<%= form_with(model: @tweet, url: tweet_tweets_path(@tweet_retweeted_id), local: true) do |form| %>
+    <div class="field">
+      <%= form.label :"Que estas pensando?" %>
+      <%= form.text_field :content %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+<% end %>
