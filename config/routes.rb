@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   root 'tweets#index'
   post 'likes/:tweet_id', to: 'likes#create', as: 'likes'
   # post 'tweets/:tweet_id/retweet', to: 'tweets#retweet', as: 'retweet'
-  post 'tweets/:tweet_id/tweets', to: 'tweets#retweet', as: 'retweet'
+  # post 'tweets/:tweet_id/tweets', to: 'tweets#retweet', as: 'retweet'
 end
