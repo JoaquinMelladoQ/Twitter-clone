@@ -28,7 +28,8 @@
             <% if user_signed_in? %>
             <hr>
             <div>
-              <%= link_to "#{tweet.total_likes} Like", likes_path(tweet.id), method: :post, class: "tweet--date" %> •
+             <i class="far fa-heart"><%= link_to "#{tweet.total_likes}", likes_path(tweet.id), method: :post, class: "tweet--date" %>
+              </i>
             </div>
             <hr>
             <% end %>
