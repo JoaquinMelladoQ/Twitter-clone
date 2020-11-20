@@ -3,12 +3,11 @@ Rails.application.routes.draw do
     :registration => "users/registrations",
     :session => "users/sessions"
   }
-  resources :tweets do
-    resources :tweets
-  end
+  resources :tweets
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'tweets#index'
   post 'likes/:tweet_id', to: 'likes#create', as: 'likes'
+  post 'tweets/:id', to: 'tweets#retweet'
   # post 'tweets/:tweet_id/retweet', to: 'tweets#retweet', as: 'retweet'
   # post 'tweets/:tweet_id/tweets', to: 'tweets#retweet', as: 'retweet'
 end

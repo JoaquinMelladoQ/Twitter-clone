@@ -1,0 +1,19 @@
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/byebug-11.1.3/ext/byebug
+/home/zerep/.rvm/rubies/ruby-2.5.3/bin/ruby -I /home/zerep/.rvm/rubies/ruby-2.5.3/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201120-34344-yf61np.rb extconf.rb
+creating Makefile
+
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/byebug-11.1.3/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20201120-34344-1g6wfjv/byebug

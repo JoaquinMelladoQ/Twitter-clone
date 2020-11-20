@@ -1,0 +1,15 @@
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/bindex-0.8.1/ext/skiptrace
+/home/zerep/.rvm/rubies/ruby-2.5.3/bin/ruby -I /home/zerep/.rvm/rubies/ruby-2.5.3/lib/ruby/site_ruby/2.5.0 -r ./siteconf20201120-34344-1kpi6jq.rb extconf.rb
+creating Makefile
+
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/zerep/Desktop/Not_tuita/joaquin/Twitter-clone/vendor/cache/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20201120-34344-574c9b/skiptrace/internal

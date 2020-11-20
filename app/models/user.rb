@@ -4,5 +4,6 @@ class User < ApplicationRecord
 
   has_many :tweets
   has_many :likes
+  has_many :retweets
   paginates_per 50
 end
