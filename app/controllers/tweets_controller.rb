@@ -19,7 +19,7 @@ class TweetsController < ApplicationController
   end
   
   def create
-    @tweet = Tweet.find(params.require(:id))
+    @tweet = Tweet.new(tweet_params)
     @tweet.user = current_user
     
     respond_to do |format|
