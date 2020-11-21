@@ -9,5 +9,8 @@
   * jquery-rails
   * 'bootstrap', '~> 4.3.1'
 
+As professor Doug said:
+> "Un gran poder requiere una *gran* responsabilidad"
+
 
 
