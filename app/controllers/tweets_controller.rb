@@ -50,7 +50,7 @@ class TweetsController < ApplicationController
     @retweet = @tweet.retweets.new(user: current_user)
     @retweet.save
     new_rt = Tweet.new(content: @tweet.content, user: current_user)
-    new_rt.content += "robado desde el tweet de #{@tweet.user.email}"
+    new_rt.content += "#{@tweet.user.email}"
     new_rt.save
     redirect_to root_path
   end

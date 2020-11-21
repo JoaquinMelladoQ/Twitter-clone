@@ -24,7 +24,7 @@
             <hr>
             <div>      
             <%= button_to(tweet_path(tweet.id), class: 'btn btn-info') do %>
-              <%= tweet.retweets.length %> Retuitea
+              <%= tweet.retweets.length %> Retweet
             <% end %>
             </div>
             <% if user_signed_in? %>
