@@ -1,14 +1,16 @@
 <div class="container">
-  <div class="row justify-content-md-center">
-      <% if user_signed_in? %>
+  <div class="m-5">
       <div class="container">
-        <%= image_tag "#{current_user.image_url}", class: "tweet--user-image" %>
-        <%= current_user.name %>
-        <div class="d-flex">
-          <%= render 'form', tweet: @tweet %>
-        </div>
+        <% if user_signed_in? %>
+          <div class="justify-content ml-5 pl-5">
+            <%= image_tag "#{current_user.image_url}", class: "tweet--user-image" %>
+            <%= current_user.name %>
+            <div class="d-flex">
+              <%= render 'form', tweet: @tweet %>
+            </div>
+          </div>
+        <% end %>
       </div>
-      <% end %>
 
       <hr>
   
