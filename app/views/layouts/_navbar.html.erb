@@ -11,14 +11,14 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %>
             <div class="dropdown-divider"></div>
-            <%= link_to "Sing out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+            <%= link_to "Sing Out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
           </div>
         </li>
         <% else %>
         <div class="ml-auto">
           <li>
-            <%= link_to "Log in", new_user_session_path, class:'btn btn-secondary' %>
-            <%= link_to "Sing up", new_user_registration_path, class: 'btn btn-secondary' %>
+            <%= link_to "Log In", new_user_session_path, class:'btn btn-secondary' %>
+            <%= link_to "Sing Up", new_user_registration_path, class: 'btn btn-secondary' %>
           </li>
         </div>
     <% end %>
