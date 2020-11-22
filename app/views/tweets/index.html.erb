@@ -22,8 +22,8 @@
             <span class="container">@<%= tweet.user.name %></span>
             <%= link_to distance_of_time_in_words(Time.now, tweet.created_at), tweet_path(tweet.id), class: "tweet--date" %>
           </div>
-          <div class="container">
-            <p class="tweet--content-text">
+          <div class="container mx-5">
+            <p class="">
               <%= tweet.content %>
             </p>
 
