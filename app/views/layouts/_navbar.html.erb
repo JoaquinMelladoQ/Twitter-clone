@@ -15,14 +15,17 @@
           </div>
         </li>
         <% else %>
-        <div class="ml-auto">
+        <div class="container">
           <li>
             <%= link_to "Log In", new_user_session_path, class:'btn btn-secondary' %>
             <%= link_to "Sing Up", new_user_registration_path, class: 'btn btn-secondary' %>
           </li>
         </div>
     <% end %>
+     <div class="container">
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Search Twitter" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
+      </div>
   </nav>
