@@ -22,15 +22,17 @@
               <%= tweet.content %>
             </p>
             <hr>
-            <% if user_signed_in? %>
-            <div>
-              <%= link_to "#{tweet.total_likes}", likes_path(tweet.id), method: :post, class: "far fa-heart" %>
+            <div class="row justify-content-start">
+              <% if user_signed_in? %>
+              <div class="col-1">
+                <%= link_to "#{tweet.total_likes}", likes_path(tweet.id), method: :post, class: "far fa-heart" %>
+              </div>
+              <div>
+              <%= link_to tweet.retweets.length, tweet_path(tweet.id), method: :post, class: "fas fa-retweet"%>
+              </div>
+              <hr>
+              <% end %>
             </div>
-            <div>
-             <%= link_to tweet.retweets.length, tweet_path(tweet.id), method: :post, class: "fas fa-retweet"%>
-            </div>
-            <hr>
-            <% end %>
           </div>
         </div>
         <% end %>
