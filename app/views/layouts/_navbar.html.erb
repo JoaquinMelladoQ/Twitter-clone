@@ -4,26 +4,28 @@
         <a class="navbar-brand pl-4 pr-4" href="#">
           <i class="fa fa-twitter" aria-hidden="true"></i>
         </a>
-        <% if user_signed_in? %>
-            <li class="nav-link text-center pt-0 pb-0 w-100">
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Welcome, <%= current_user.name %></a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %>
-                <div class="dropdown-divider"></div>
-                <%= link_to "Sing Out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
-              </div>
-            </li>
-            <% else %>
-            <div>
-              <li>
-                <%= link_to "Log In", new_user_session_path, class:'btn btn-secondary' %>
-                <%= link_to "Sing Up", new_user_registration_path, class: 'btn btn-secondary' %>
+          <div class="row justify-content-end">
+            <% if user_signed_in? %>
+              <li class="nav-link text-center pt-0 pb-0 w-100">
               </li>
-            </div>
-        <% end %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">Welcome, <%= current_user.name %></a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %>
+                  <div class="dropdown-divider"></div>
+                  <%= link_to "Sing Out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+                </div>
+              </li>
+              <% else %>
+              <div>
+                <li>
+                  <%= link_to "Log In", new_user_session_path, class:'btn btn-secondary' %>
+                  <%= link_to "Sing Up", new_user_registration_path, class: 'btn btn-secondary' %>
+                </li>
+              </div>
+            <% end %>
+          </div>
         <div>
             <form class="form-inline">
               <input class="form-control" type="search" placeholder="Search Twitter" aria-label="Search">
