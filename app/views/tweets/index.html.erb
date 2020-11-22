@@ -22,16 +22,12 @@
               <%= tweet.content %>
             </p>
             <hr>
-            <div>      
-            <%= button_to(tweet_path(tweet.id), class: 'btn btn-primary') do %>
-              <%= tweet.retweets.length %> Retweet
-            <% end %>
-            </div>
             <% if user_signed_in? %>
-            <hr>
             <div>
-             <i class="far fa-heart"><%= link_to "#{tweet.total_likes}", likes_path(tweet.id), method: :post, class: "tweet--date" %>
-              </i>
+              <%= link_to "#{tweet.total_likes}", likes_path(tweet.id), method: :post, class: "far fa-heart" %>
+            </div>
+            <div>
+             <%= link_to tweet.retweets.length, tweet_path(tweet.id), method: :post, class: "fas fa-retweet"%>
             </div>
             <hr>
             <% end %>
