@@ -11,12 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field card mx-auto mt-5" style="width: 300%">
+  <div class="field card mx-auto mt-5" style="width: 200%">
     <%= form.label :"What's happening?" %>
-    <%= form.text_field :content %>
+    <%= form.text_field :content, style: "height: 50px"%>
   </div>
-
-  <div class="actions">
-    <%= form.submit :"Tweet", class: "btn btn-primary"%>
+  <div class="row justify-content-end" style="">
+    <div class="actions">
+      <%= form.submit :"Tweet", class: "btn btn-primary"%>
+    </div>
   </div>
 <% end %>
