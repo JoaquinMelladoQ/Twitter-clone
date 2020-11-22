@@ -6,18 +6,16 @@
         <%= render 'form', tweet: @tweet %>
       </div>
       <% end %>
+  
       <div class="container">
-        <h1>Home</h1>
-      </div>
-      <div class="index--content">
         <% @tweets.each do |tweet| %>
-        <div class="tweet">
+        <div class="container">
           <div class="tweet--header">
             <%= image_tag "#{tweet.user.image_url}", class: "tweet--user-image" %>
-            <span class="tweet--username"><%= tweet.user.name %></span> •
+            <span class="container"><%= tweet.user.name %></span>
             <%= link_to distance_of_time_in_words(Time.now, tweet.created_at), tweet_path(tweet.id), class: "tweet--date" %>
           </div>
-          <div class="tweet--content">
+          <div class="container">
             <p class="tweet--content-text">
               <%= tweet.content %>
             </p>
@@ -28,7 +26,7 @@
                 <%= link_to "#{tweet.total_likes}", likes_path(tweet.id), method: :post, class: "far fa-heart" %>
               </div>
               <div>
-              <%= link_to tweet.retweets.length, tweet_path(tweet.id), method: :post, class: "fas fa-retweet"%>
+              <%= link_to tweet.retweets.length, tweet_path(tweet.id), method: :post, class: "fas fa-retweet" %>
               </div>
               <hr>
               <% end %>
