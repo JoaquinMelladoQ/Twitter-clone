@@ -3,6 +3,7 @@
       <% if user_signed_in? %>
       <div class="index--form">
         <%= image_tag "#{current_user.image_url}", class: "tweet--user-image" %>
+        <%= current_user.name %>
         <%= render 'form', tweet: @tweet %>
       </div>
       <% end %>
