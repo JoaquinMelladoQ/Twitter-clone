@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweet = Tweet.new
-    @tweets = Tweet.all.order("updated_at DESC").page params[:page]
+    @tweets = Tweet.includes(:tweet, :user, :retweets).order("updated_at DESC").page params[:page]
   end
 
   def show
@@ -52,7 +52,6 @@ class TweetsController < ApplicationController
     new_rt = Tweet.new(content: @tweet.content, user: current_user)
     new_rt.content += ", retweeted by @#{@retweet.user.name}, original tweet from @#{@tweet.user.name}"
     new_rt.save
-
     redirect_to root_path
   end
 
