@@ -1,4 +1,4 @@
-<nav class="nav navbar-expand-lg navbar-dark bg-dark ml-auto">
+<nav class="nav navbar-expand-lg navbar-dark bg-info text-white ml-auto">
   <div class="container-fluid">
     <div class="row justify-content-between">
         <a class="navbar-brand pl-4 pr-4" href="#">
@@ -10,7 +10,9 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">Welcome, @<%= current_user.name %></a>
+                  aria-haspopup="true" aria-expanded="false">
+                  Welcome, <%= current_user.name %> 
+                </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <%= link_to 'Profile', edit_user_registration_path, class: 'dropdown-item' %>
                   <div class="dropdown-divider"></div>
